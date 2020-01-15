@@ -1,0 +1,37 @@
+<!DOCTYPE subredditcorpus
+[
+<!ELEMENT subredditcorpus (submission*)>
+<!ELEMENT submission (main_post?, comment*)>
+<!ELEMENT main_post (link | comment) >
+<!ELEMENT link (source?)>
+<!ELEMENT comment (#PCDATA | text | source | comment)*>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT text (s+)>
+<!ELEMENT s (t+)>
+<!ELEMENT t (#PCDATA)>
+<!ATTLIST subredditcorpus subreddit_name CDATA #REQUIRED>
+<!ATTLIST subredditcorpus subreddit_id CDATA #REQUIRED>
+<!ATTLIST subredditcorpus download_date CDATA #REQUIRED>
+<!ATTLIST submission title CDATA #IMPLIED>
+<!ATTLIST submission id CDATA #REQUIRED>
+<!ATTLIST submission date CDATA #IMPLIED>
+<!ATTLIST link id CDATA #REQUIRED>
+<!ATTLIST link date CDATA #REQUIRED>
+<!ATTLIST link link_id CDATA #IMPLIED>
+<!ATTLIST link parent_id CDATA #IMPLIED>
+<!ATTLIST link score CDATA #REQUIRED>
+<!ATTLIST link author CDATA #REQUIRED>
+<!ATTLIST link author_flair CDATA #IMPLIED>
+<!ATTLIST link domain CDATA #IMPLIED>
+<!ATTLIST link url CDATA #IMPLIED>
+<!ATTLIST comment id CDATA #REQUIRED>
+<!ATTLIST comment date CDATA #REQUIRED>
+<!ATTLIST comment link_id CDATA #IMPLIED>
+<!ATTLIST comment parent_id CDATA #IMPLIED>
+<!ATTLIST comment score CDATA #REQUIRED>
+<!ATTLIST comment author CDATA #REQUIRED>
+<!ATTLIST comment author_flair CDATA #IMPLIED>
+<!ATTLIST comment off CDATA #IMPLIED>
+<!ATTLIST comment off_p CDATA #IMPLIED>
+<!ATTLIST t annotations CDATA #IMPLIED>
+]>
